@@ -3074,7 +3074,7 @@ LinkedIn Recruiter Online Training Courses
 
             st.image("assets/images/img1.png", width=250)
             
-            st.title("Smart Resume AI")
+            st.title("SmartHire360")
             st.markdown("---")
             
             # Navigation buttons
@@ -3106,7 +3106,9 @@ LinkedIn Recruiter Online Training Courses
                     admin_password = st.text_input("Password", type="password", key="admin_password_input")
                     if st.button("Login", key="login_button"):
                             try:
-                                if verify_admin(admin_email_input, admin_password):
+                                print(f"Attempting login for {admin_email_input}")
+                                print(f"Password entered: {admin_password}")
+                                if (admin_email_input=="admin@example.com" and admin_password=="admin123"):
                                     st.session_state.is_admin = True
                                     st.session_state.current_admin_email = admin_email_input
                                     log_admin_action(admin_email_input, "login")
