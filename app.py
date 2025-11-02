@@ -40,6 +40,15 @@ from resume_filter.filter import render_resume_filter
 from employee_attrition.attrition import render_employee_attrition
 
 
+import streamlit.components.v1 as components
+
+# Force dark mode immediately
+components.html("""
+<script>
+document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+""", height=0)
+
 # Set page config at the very beginning
 st.set_page_config(
     page_title="Smart Resume AI",
